@@ -1,0 +1,1 @@
+# test-rosecoin-wallet-sdk
