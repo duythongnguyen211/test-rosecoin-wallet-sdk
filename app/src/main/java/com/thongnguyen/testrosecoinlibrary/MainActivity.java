@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout btnSignIn;
 
     WebView webView;
+
+    CheckBox cbStoringPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn = (RelativeLayout) rootView.findViewById(R.id.btn_sign_in);
 
         webView = (WebView) rootView.findViewById(R.id.webview);
+
+        cbStoringPass = (CheckBox) rootView.findViewById(R.id.cb_storing_pass);
 
         webView.getSettings().setJavaScriptEnabled(true);
         // Zoom by touch and drag
@@ -74,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 new RoseCoinManager.Builder(MainActivity.this)
                         .setApiKey("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJyb3NlY29pbmFkbWluIiwic3ViIjoidGVzdGluZyIsImtleSI6IjkzN2EzMTMxNmJiYWU4MGFhMDEyZWZlZGNjNDhkM2FmIn0=.4QS7H90iJFbTM8Fd4pW2yPIR7TVTtZs378kfm1mxXOM=")
                         .setUserIdentityData(email)
+                        .setUsingStoringPassphrase(cbStoringPass.isChecked())
                         .build();
 
                 Intent intent = new Intent(MainActivity.this, RoseCoinActivity.class);

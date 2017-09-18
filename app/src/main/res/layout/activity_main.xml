@@ -88,6 +88,15 @@
 
         </RelativeLayout>
 
+        <CheckBox
+            android:id="@+id/cb_storing_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:checked="false"
+            android:text="Using Storing Passphrase in SDK"/>
+
         <RelativeLayout
             android:id="@+id/rl_password"
             android:layout_width="match_parent"
